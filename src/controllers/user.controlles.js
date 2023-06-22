@@ -55,7 +55,7 @@ const update = catchError(async(req, res) => {
 });
 
 
-const verifyCode = catchError(async (req,res)=>{ // /verify/:code
+const verifyCode = catchError(async (req,res)=>{ 
     const {code} = req.params
     const codeUser = await EmailCode.findOne({where:{code}})
     if(!codeUser) return res.sendStatus(401)
